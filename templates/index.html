@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculatrice Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Calculatrice Web</h1>
+    <form method="POST">
+      <label for="nombre1">Nombre 1:</label>
+        <input type="number" name="nombre1" id = "nombre1" required><br>
+        <label for="nombre2">Nombre 2:</label>
+        <input type="number" name="nombre2" id = "nombre2"><br><br>
+        Opération:
+        <select name="operation">
+            <option value="addition">Addition (+)</option>
+            <option value="soustraction">Soustraction (-)</option>
+            <option value="multiplication">Multiplication (*)</option>
+            <option value="division">Division (/)</option>
+            <option value="carre">Carré</option>
+            <option value="racine">Racine Carrée</option>
+            <option value="puissance">Puissance</option>
+        </select><br><br>
+        <input type="submit" value="Calculer">
+    </form>
+
+    {% if resultat is not none %}
+        <p class="resultat">Résultat: {{ resultat }}</p>
+    {% endif %}
+</body>
+</html>
